@@ -1,4 +1,5 @@
 import React, { ReactFragment, useState } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
@@ -15,6 +16,7 @@ import UserMenu from '#components/UserMenu/UserMenu';
 import useBreakpoint, { Breakpoint } from '#src/hooks/useBreakpoint';
 import IconButton from '#components/IconButton/IconButton';
 import Language from '#src/icons/Language';
+import Download from '#src/assets/icons/download.png';
 import LanguageMenu from '#components/LanguageMenu/LanguageMenu';
 import type { LanguageDefinition } from '#src/i18n/config';
 import Panel from '#components/Panel/Panel';
@@ -190,6 +192,16 @@ const Header: React.FC<Props> = ({
     );
   };
 
+  const renderDownloadButton = () => {
+    return (
+      <React.Fragment>
+        <Link to={'/download'}>
+          <img alt={Download} src={Download} className={styles.downloadButton} />
+        </Link>
+      </React.Fragment>
+    );
+  };
+
   return (
     <header className={headerClassName}>
       <div className={styles.container}>
@@ -209,6 +221,7 @@ const Header: React.FC<Props> = ({
         <div className={styles.actions}>
           {renderSearch()}
           {renderLanguageDropdown()}
+          {renderDownloadButton()}
           {renderUserActions()}
         </div>
       </div>

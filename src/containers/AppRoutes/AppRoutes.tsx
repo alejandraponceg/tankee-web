@@ -23,6 +23,10 @@ import { useProfileStore } from '#src/stores/ProfileStore';
 import { useProfiles } from '#src/hooks/useProfiles';
 import LoadingOverlay from '#components/LoadingOverlay/LoadingOverlay';
 import useNotifications from '#src/hooks/useNotifications';
+import TOS from '#src/pages/TOS/TOS';
+import Disclaimers from '#src/pages/Disclaimers/Disclaimers';
+import Privacy from '#src/pages/Privacy/Privacy';
+import Download from '#src/pages/Download/Download';
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -69,6 +73,10 @@ export default function AppRoutes() {
         <Route path="/q/*" element={<Search />} />
         <Route path="/u/*" element={<User />} />
         <Route path="/o/about" element={<About />} />
+        <Route path="/terms" element={<TOS />} />
+        <Route path="/disclaimers" element={<Disclaimers />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/download" element={<Download />} />
         <Route
           path="/*"
           element={<ErrorPage title={t('notfound_error_heading', 'Not found')} message={t('notfound_error_description', "This page doesn't exist.")} />}
