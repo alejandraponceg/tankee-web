@@ -23,12 +23,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: yarn install
-      - name: Add config
-        run: |
-          touch ./ini/.webapp.prod.ini
-          echo "defaultConfigSource = tftocmi1" >> ./ini/.webapp.prod.ini
       - name: Build production website
         run: yarn build
+      - name: Add config
+        run: |
+          touch ./build/public/.webapp.ini
+          echo "defaultConfigSource = tftocmi1" >> ./build/public/.webapp.ini
       - name: Deploy
         uses: lbertenasco/s3-deploy@v1
         with:
