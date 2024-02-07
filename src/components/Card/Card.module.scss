@@ -109,6 +109,11 @@
       opacity: 1;
     }
   }
+
+  .posterImageRounded {
+    @extend .posterImage;
+    border-radius: 50%;
+  }
 }
 
 .currentLabel {

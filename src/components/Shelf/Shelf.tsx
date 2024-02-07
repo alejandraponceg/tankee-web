@@ -68,7 +68,8 @@ const Shelf = ({
   const { t } = useTranslation('common');
   const [didSlideBefore, setDidSlideBefore] = useState(false);
   const tilesToShow: number = (featured ? featuredTileBreakpoints[breakpoint] : tileBreakpoints[breakpoint]) + visibleTilesDelta;
-
+  const isRound =  ['creators', 'games', 'tankee originals'].includes(title?.toLowerCase() || playlist.title);
+  const posterAspectToUse = isRound ? '1:1' : posterAspect;
   const renderTile = useCallback(
     (item: PlaylistItem, isInView: boolean) => {
       const url = mediaURL({ media: item, playlistId: playlist.feedid, play: type === PersonalShelf.ContinueWatching });
@@ -81,9 +82,10 @@ const Shelf = ({
           disabled={!isInView}
           loading={loading}
           isLocked={isLocked(accessModel, isLoggedIn, hasSubscription, item)}
-          posterAspect={posterAspect}
+          posterAspect={posterAspectToUse}
           item={item}
           url={url}
+          isRound={isRound}
         />
       );
     },

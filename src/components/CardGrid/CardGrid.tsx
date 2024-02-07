@@ -83,6 +83,7 @@ function CardGrid({
             isLocked={isLocked(accessModel, isLoggedIn, hasSubscription, playlistItem)}
             posterAspect={posterAspect}
             item={playlistItem}
+            isRound={['creators', 'games', 'tankee originals'].includes(playlist.title)}
           />
         </div>
       </div>

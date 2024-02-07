@@ -29,6 +29,7 @@ type CardProps = {
   isLocked?: boolean;
   currentLabel?: string;
   url: string;
+  isRound: boolean;
 };
 
 function Card({
@@ -43,7 +44,8 @@ function Card({
   isLocked = true,
   currentLabel,
   url,
-}: CardProps): JSX.Element {
+                isRound,
+              }: CardProps): JSX.Element {
   const { title, duration, episodeNumber, seasonNumber, cardImage: image, mediaStatus, scheduledStart } = item;
   const {
     t,
@@ -57,7 +59,9 @@ function Card({
   const posterClassNames = classNames(styles.poster, styles[`aspect${posterAspect.replace(':', '')}`], {
     [styles.current]: isCurrent,
   });
-  const posterImageClassNames = classNames(styles.posterImage, {
+  const posterImageClassNames = isRound ? classNames(styles.posterImageRounded, {
+    [styles.visible]: imageLoaded,
+  }) : classNames(styles.posterImage, {
     [styles.visible]: imageLoaded,
   });
 
