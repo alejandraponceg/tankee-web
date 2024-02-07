@@ -29,18 +29,20 @@ jobs:
           echo "defaultConfigSource = tftocmi1" >> ./ini/.webapp.prod.ini
       - name: Build production website
         run: yarn build
-      - name: Deploy
-        uses: prewk/s3-cp-action@v2
+      - name: Copy to S3 bucket
+        uses: jakejarvis/s3-sync-action@master
         with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          source: './build'
-          dest: 's3://tankee-website'
-          flags: --recursive
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          SOURCE_DIR: 'build'
       - name: Invalidate Cloudfront Distribution
         uses: awact/cloudfront-action@master
         env:
-          AWS_REGION: 'us-east-1'
+          AWS_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
