@@ -3,6 +3,8 @@ name: Deploy tankee.com
 on:
   push:
     branches: ['deploy']
+  workflow_dispatch:
+    branches: [ 'deploy' ]
 
 jobs:
   build:
