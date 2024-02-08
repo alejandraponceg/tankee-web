@@ -1,5 +1,4 @@
 import React, { ReactFragment, useState } from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useTranslation } from 'react-i18next';
 
@@ -16,7 +15,7 @@ import UserMenu from '#components/UserMenu/UserMenu';
 import useBreakpoint, { Breakpoint } from '#src/hooks/useBreakpoint';
 import IconButton from '#components/IconButton/IconButton';
 import Language from '#src/icons/Language';
-import Download from '#src/assets/icons/download.png';
+import Download from '#src/icons/Download';
 import LanguageMenu from '#components/LanguageMenu/LanguageMenu';
 import type { LanguageDefinition } from '#src/i18n/config';
 import Panel from '#components/Panel/Panel';
@@ -29,6 +28,7 @@ type TypeHeader = 'static' | 'fixed';
 type Props = {
   headerType?: TypeHeader;
   onMenuButtonClick: () => void;
+  downloadButtonClick: () => void;
   logoSrc?: string | null;
   searchBarProps: SearchBarProps;
   searchEnabled: boolean;
@@ -66,6 +66,7 @@ const Header: React.FC<Props> = ({
   children,
   headerType = 'static',
   onMenuButtonClick,
+  downloadButtonClick,
   logoSrc,
   searchBarProps,
   searchActive,
@@ -195,9 +196,9 @@ const Header: React.FC<Props> = ({
   const renderDownloadButton = () => {
     return (
       <React.Fragment>
-        <Link to={'/download'}>
-          <img alt={Download} src={Download} className={styles.downloadButton} />
-        </Link>
+        <IconButton className={classNames(styles.iconButton, styles.actionButton)} aria-label={t('download')} onClick={downloadButtonClick}>
+          <Download />
+        </IconButton>
       </React.Fragment>
     );
   };

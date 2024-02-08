@@ -73,10 +73,10 @@ export default function AppRoutes() {
         <Route path="/q/*" element={<Search />} />
         <Route path="/u/*" element={<User />} />
         <Route path="/o/about" element={<About />} />
-        <Route path="/terms" element={<TOS />} />
-        <Route path="/disclaimers" element={<Disclaimers />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/download" element={<Download />} />
+        <Route path="/t/terms" element={<TOS />} />
+        <Route path="/t/disclaimers" element={<Disclaimers />} />
+        <Route path="/t/privacy" element={<Privacy />} />
+        <Route path="/t/download" element={<Download />} />
         <Route
           path="/*"
           element={<ErrorPage title={t('notfound_error_heading', 'Not found')} message={t('notfound_error_description', "This page doesn't exist.")} />}

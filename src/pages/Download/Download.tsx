@@ -18,27 +18,29 @@ const Download = () => {
       <main className={styles.main}>
         <div>
           <Link to={'https://apps.apple.com/us/app/tankee/id1339413435?ls=1'}>
-            <img alt={appStore} src={appStore} />
+            <img alt={appStore} src={appStore}/>
           </Link>
-          <text>Tankee for iPhone, iPads & AppleTV</text>
+          <textarea value={'Tankee for iPhone, iPads & AppleTV'} readOnly={true}></textarea>
         </div>
         <div>
           <Link to={'https://play.google.com/store/apps/details?id=com.tankeeinc.tankee'}>
             <img alt={playStore} src={playStore} />
           </Link>
-          <text>Tankee for Android Phones & Tablets</text>
+          <textarea value={'Tankee for Android Phones & Tablets'} readOnly={true}></textarea>
         </div>
         <div>
-          <Link to={'https://www.amazon.com/Tankee-Inc/dp/B07VQHV1M7/ref=sr_1_1?keywords=tankee&qid=1565427411&s=mobile-apps&sr=1-1'}>
-            <img alt={amazonStore} src={amazonStore} />
+          <Link
+              to={'https://www.amazon.com/Tankee-Inc/dp/B07VQHV1M7/ref=sr_1_1?keywords=tankee&qid=1565427411&s=mobile-apps&sr=1-1'}>
+            <img alt={amazonStore} src={amazonStore}/>
           </Link>
-          <text>Tankee for Kindle Fire Tablets</text>
+          <textarea value={'Tankee for Kindle Fire Tablets'} readOnly={true}></textarea>
         </div>
         <div>
-          <Link to={'https://channelstore.roku.com/en-ot/details/accae28b3787770272483f98e0c8e043/tankee-minecraft-roblox-and-more'}>
-            <img alt={rokuStore} src={rokuStore} />
+          <Link
+              to={'https://channelstore.roku.com/en-ot/details/accae28b3787770272483f98e0c8e043/tankee-minecraft-roblox-and-more'}>
+            <img alt={rokuStore} src={rokuStore}/>
           </Link>
-          <text>Tankee for Roku devices & TV&apos;s</text>
+          <textarea value={'Tankee for Roku devices & TV\'s'} readOnly={true}></textarea>
         </div>
       </main>
     </div>

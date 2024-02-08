@@ -105,6 +105,10 @@ const Layout = () => {
     navigate(addQueryParam(location, 'u', 'create-account'));
   };
 
+  const downloadButtonClickHandler = () => {
+    navigate('/t/download/');
+  };
+
   const languageClickHandler = async (code: string) => {
     await i18n.changeLanguage(code);
   };
@@ -141,6 +145,7 @@ const Layout = () => {
       <div className={styles.main}>
         <Header
           onMenuButtonClick={() => setSideBarOpen(true)}
+          downloadButtonClick={downloadButtonClickHandler}
           logoSrc={banner}
           searchEnabled={!!searchPlaylist}
           searchBarProps={{
