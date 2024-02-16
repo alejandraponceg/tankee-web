@@ -11,6 +11,7 @@ import type { AccessModel } from '#types/Config';
 import type { Playlist, PlaylistItem } from '#types/playlist';
 import { parseAspectRatio, parseTilesDelta } from '#src/utils/collection';
 import InfiniteScrollLoader from '#components/InfiniteScrollLoader/InfiniteScrollLoader';
+import { isRoundIcon } from '#src/utils/tankee';
 
 const INITIAL_ROW_COUNT = 6;
 const LOAD_ROWS_COUNT = 4;
@@ -83,7 +84,7 @@ function CardGrid({
             isLocked={isLocked(accessModel, isLoggedIn, hasSubscription, playlistItem)}
             posterAspect={posterAspect}
             item={playlistItem}
-            isRound={['creators', 'games', 'tankee originals'].includes(playlist.title)}
+            isRound={isRoundIcon(playlist)}
           />
         </div>
       </div>

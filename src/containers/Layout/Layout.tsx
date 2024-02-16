@@ -25,6 +25,7 @@ import { useProfiles, useSelectProfile } from '#src/hooks/useProfiles';
 import { IS_DEVELOPMENT_BUILD } from '#src/utils/common';
 import ProfileController from '#src/stores/ProfileController';
 import { getModule } from '#src/modules/container';
+import Footer from '#components/Footer/Footer';
 
 const Layout = () => {
   const location = useLocation();
@@ -107,6 +108,46 @@ const Layout = () => {
 
   const downloadButtonClickHandler = () => {
     navigate('/t/download/');
+  };
+
+  const homeClickHandler = () => {
+    navigate('/');
+  };
+
+  const kidSafeClickHandler = () => {
+    window.location.href = 'https://www.kidsafeseal.com/certifiedproducts/tankee_app.html';
+  };
+
+  const aboutUsClickHandler = () => {
+    navigate('/t/about/');
+  };
+
+  const contactUsClickHandler = () => {
+    navigate('/t/contact/');
+  };
+
+  const disclaimersClickHandler = () => {
+    navigate('/t/disclaimers/');
+  };
+
+  const termsClickHandler = () => {
+    navigate('/t/terms/');
+  };
+
+  const privacyClickHandler = () => {
+    navigate('/t/privacy/');
+  };
+
+  const originalsClickHandler = () => {
+    navigate('/p/pSbIBRsc/');
+  };
+
+  const gamesClickHandler = () => {
+    navigate('/p/yGSsGFRL/');
+  };
+
+  const creatorsClickHandler = () => {
+    navigate('/p/zRc7ZRiM/');
   };
 
   const languageClickHandler = async (code: string) => {
@@ -194,6 +235,19 @@ const Layout = () => {
           {renderUserActions()}
         </Sidebar>
         <Outlet />
+        <Footer
+          onLogoClick={homeClickHandler}
+          onGetAppClick={downloadButtonClickHandler}
+          onKidsSafeClick={kidSafeClickHandler}
+          onAboutUsClick={aboutUsClickHandler}
+          onContactClick={contactUsClickHandler}
+          onDisclaimersClick={disclaimersClickHandler}
+          onTermsClick={termsClickHandler}
+          onPrivacyClick={privacyClickHandler}
+          onOriginalsClick={originalsClickHandler}
+          onGamesClick={gamesClickHandler}
+          onCreatorsClick={creatorsClickHandler}
+        />
       </div>
       {!!footerText && (
         <MarkdownComponent

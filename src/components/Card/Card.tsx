@@ -44,8 +44,8 @@ function Card({
   isLocked = true,
   currentLabel,
   url,
-                isRound,
-              }: CardProps): JSX.Element {
+  isRound,
+}: CardProps): JSX.Element {
   const { title, duration, episodeNumber, seasonNumber, cardImage: image, mediaStatus, scheduledStart } = item;
   const {
     t,
@@ -59,11 +59,13 @@ function Card({
   const posterClassNames = classNames(styles.poster, styles[`aspect${posterAspect.replace(':', '')}`], {
     [styles.current]: isCurrent,
   });
-  const posterImageClassNames = isRound ? classNames(styles.posterImageRounded, {
-    [styles.visible]: imageLoaded,
-  }) : classNames(styles.posterImage, {
-    [styles.visible]: imageLoaded,
-  });
+  const posterImageClassNames = isRound
+    ? classNames(styles.posterImageRounded, {
+        [styles.visible]: imageLoaded,
+      })
+    : classNames(styles.posterImage, {
+        [styles.visible]: imageLoaded,
+      });
 
   const isSeriesItem = isSeries(item);
   const isLive = mediaStatus === MediaStatus.LIVE || isLiveChannel(item);

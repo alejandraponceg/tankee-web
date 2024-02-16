@@ -1,0 +1,101 @@
+@use 'src/styles/variables';
+@use 'src/styles/theme';
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows:  auto auto auto auto auto;
+  grid-template-areas:
+    "logo aboutHeader legal links"
+    "getApp aboutUs disclaimers originals"
+    "kidSafe contact terms games"
+    ". . privacy creators"
+    "copy copy copy copy"
+
+}
+
+.image {
+  max-width:100%;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.link {
+  font-weight: normal;
+}
+
+.copy {
+  font-weight: normal;
+}
+
+.logo {
+  @extend .image;
+  grid-area: logo;
+}
+
+.getApp {
+  @extend .image;
+  grid-area: getApp;
+}
+
+.kidSafe {
+  @extend .image;
+  grid-area: kidSafe;
+}
+
+.aboutHeader {
+  @extend .header;
+  grid-area: aboutHeader;
+}
+
+.aboutUs {
+  @extend .link;
+  grid-area: aboutUs;
+}
+
+.contact {
+  @extend .link;
+  grid-area: contact;
+}
+
+.legal {
+  @extend .header;
+  grid-area: legal;
+}
+
+.disclaimers {
+  @extend .link;
+  grid-area: disclaimers;
+}
+
+.terms {
+  @extend .link;
+  grid-area: terms;
+}
+
+.privacy {
+  @extend .link;
+  grid-area: privacy;
+}
+
+.links {
+  @extend .header;
+  grid-area: links;
+}
+
+.originals {
+  @extend .link;
+  grid-area: originals;
+}
+
+.games {
+  @extend .link;
+  grid-area: games;
+}
+
+.creators {
+  @extend .link;
+  grid-area: creators;
+}

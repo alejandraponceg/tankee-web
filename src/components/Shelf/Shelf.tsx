@@ -14,6 +14,7 @@ import Card, { type PosterAspectRatio } from '#components/Card/Card';
 import type { Playlist, PlaylistItem } from '#types/playlist';
 import { mediaURL } from '#src/utils/formatting';
 import { PersonalShelf } from '#src/config';
+import { isRoundIcon } from '#src/utils/tankee';
 
 export const tileBreakpoints: Breakpoints = {
   [Breakpoint.xs]: 1,
@@ -68,7 +69,7 @@ const Shelf = ({
   const { t } = useTranslation('common');
   const [didSlideBefore, setDidSlideBefore] = useState(false);
   const tilesToShow: number = (featured ? featuredTileBreakpoints[breakpoint] : tileBreakpoints[breakpoint]) + visibleTilesDelta;
-  const isRound =  ['creators', 'games', 'tankee originals'].includes(title?.toLowerCase() || playlist.title);
+  const isRound = isRoundIcon(playlist);
   const posterAspectToUse = isRound ? '1:1' : posterAspect;
   const renderTile = useCallback(
     (item: PlaylistItem, isInView: boolean) => {
@@ -89,7 +90,7 @@ const Shelf = ({
         />
       );
     },
-    [watchHistory, onCardHover, featured, loading, accessModel, isLoggedIn, hasSubscription, posterAspect, playlist.feedid, type],
+    [watchHistory, onCardHover, featured, loading, accessModel, isLoggedIn, hasSubscription, playlist.feedid, type, isRound, posterAspectToUse],
   );
 
   const renderRightControl = useCallback(

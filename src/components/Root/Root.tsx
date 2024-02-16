@@ -2,9 +2,8 @@ import React, { FC, useEffect, useState } from 'react';
 
 import ErrorPage from '#components/ErrorPage/ErrorPage';
 import AccountModal from '#src/containers/AccountModal/AccountModal';
-import { IS_DEMO_MODE, IS_DEVELOPMENT_BUILD, IS_PREVIEW_MODE, IS_PROD_MODE } from '#src/utils/common';
+import { IS_DEMO_MODE, IS_PREVIEW_MODE, IS_PROD_MODE } from '#src/utils/common';
 import DemoConfigDialog from '#components/DemoConfigDialog/DemoConfigDialog';
-import DevConfigSelector from '#components/DevConfigSelector/DevConfigSelector';
 import AppRoutes from '#src/containers/AppRoutes/AppRoutes';
 import registerCustomScreens from '#src/screenMapping';
 import LoadingOverlay from '#components/LoadingOverlay/LoadingOverlay';
@@ -27,14 +26,12 @@ const ProdContentLoader = ({ query }: { query: BootstrapData }) => {
 };
 
 const DemoContentLoader = ({ query }: { query: BootstrapData }) => {
-  const { isLoading, error, data } = query;
+  const { isLoading, error } = query;
 
   // Show the spinner while loading except in demo mode (the demo config shows its own loading status)
   if (!IS_DEMO_OR_PREVIEW && isLoading) {
     return <LoadingOverlay />;
   }
-
-  const { configSource } = data || {};
 
   return (
     <>
@@ -44,7 +41,6 @@ const DemoContentLoader = ({ query }: { query: BootstrapData }) => {
       )}
       {IS_DEMO_OR_PREVIEW && <DemoConfigDialog query={query} />}
       {/* Config select control to improve testing experience */}
-      {(IS_DEVELOPMENT_BUILD || IS_PREVIEW_MODE) && <DevConfigSelector selectedConfig={configSource} />}
     </>
   );
 };

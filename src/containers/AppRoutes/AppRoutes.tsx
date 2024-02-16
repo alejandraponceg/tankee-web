@@ -8,16 +8,12 @@ import RootErrorPage from '#components/RootErrorPage/RootErrorPage';
 import About from '#src/pages/About/About';
 import Home from '#src/pages/Home/Home';
 import Search from '#src/pages/Search/Search';
-import User from '#src/pages/User/User';
 import LegacySeries from '#src/pages/LegacySeries/LegacySeries';
 import MediaScreenRouter from '#src/pages/ScreenRouting/MediaScreenRouter';
 import PlaylistScreenRouter from '#src/pages/ScreenRouting/PlaylistScreenRouter';
 import Layout from '#src/containers/Layout/Layout';
-import Profiles from '#src/containers/Profiles/Profiles';
-import CreateProfile from '#src/containers/Profiles/CreateProfile';
 import { useConfigStore } from '#src/stores/ConfigStore';
 import { useAccountStore } from '#src/stores/AccountStore';
-import EditProfile from '#src/containers/Profiles/EditProfile';
 import useQueryParam from '#src/hooks/useQueryParam';
 import { useProfileStore } from '#src/stores/ProfileStore';
 import { useProfiles } from '#src/hooks/useProfiles';
@@ -27,6 +23,7 @@ import TOS from '#src/pages/TOS/TOS';
 import Disclaimers from '#src/pages/Disclaimers/Disclaimers';
 import Privacy from '#src/pages/Privacy/Privacy';
 import Download from '#src/pages/Download/Download';
+import Contact from '#src/pages/Contact/Contact';
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -61,18 +58,14 @@ export default function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/u/profiles" element={<Profiles />} />
-      <Route path="/u/profiles/create" element={<CreateProfile />} />
-      <Route path="/u/profiles/edit" element={<Profiles editMode />} />
-      <Route path="/u/profiles/edit/:id" element={<EditProfile />} />
       <Route element={<Layout />} errorElement={<RootErrorPage />}>
         <Route index element={<Home />} />
         <Route path="/p/:id" element={<PlaylistScreenRouter />} />
         <Route path="/m/:id/*" element={<MediaScreenRouter />} />
         <Route path="/s/:id/*" element={<LegacySeries />} />
         <Route path="/q/*" element={<Search />} />
-        <Route path="/u/*" element={<User />} />
-        <Route path="/o/about" element={<About />} />
+        <Route path="/t/about" element={<About />} />
+        <Route path="/t/contact" element={<Contact />} />
         <Route path="/t/terms" element={<TOS />} />
         <Route path="/t/disclaimers" element={<Disclaimers />} />
         <Route path="/t/privacy" element={<Privacy />} />
