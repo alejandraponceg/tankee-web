@@ -186,10 +186,11 @@ const Layout = () => {
             httpEquiv="Content-Security-Policy"
             content={`
                       default-src 'self';
-                      img-src https://img.jwplayer.com https://cdn.jwplayer.com https://assets-jpcust.jwpsrv.com;
+                      img-src https://img.jwplayer.com https://cdn.jwplayer.com https://assets-jpcust.jwpsrv.com https://*.tankee.com;
                       frame-src https://docs.google.com;
                       worker-src https://www.google.com/recaptcha/api2/webworker.js;
                       connect-src https://analytics.google.com https://stats.g.doubleclick.net https://cdn.jwplayer.com;
+                      script-src-elem https://www.googletagmanager.com;
                 `}
         />
       </Helmet>
