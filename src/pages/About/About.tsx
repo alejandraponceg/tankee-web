@@ -5,8 +5,7 @@ import styles from './About.module.scss';
 import MarkdownComponent from '#components/MarkdownComponent/MarkdownComponent';
 
 const About = () => {
-  const markdownPage = `**About Us**
-  
+  const markdownPage = `# About Us
 Tankee is the first kids gaming network! Tankee is the Kidscreen Award Winner for Best Streaming Video Platform and SXSW Pitch Award Winner for Best Entertainment and Content Technology. Tankee is a safe and curated entertainment platform for kids. It features popular games, influencers, and original shows. Tankee is available on many devices so kids can enjoy it at home or on the go. With Tankee, parents can be confident that their kids are having fun in a safe and age-appropriate environment.
 
 Here are some of the features of Tankee:

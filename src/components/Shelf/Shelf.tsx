@@ -70,7 +70,7 @@ const Shelf = ({
   const [didSlideBefore, setDidSlideBefore] = useState(false);
   const tilesToShow: number = (featured ? featuredTileBreakpoints[breakpoint] : tileBreakpoints[breakpoint]) + visibleTilesDelta;
   const isRound = isRoundIcon(playlist);
-  const posterAspectToUse = isRound ? '1:1' : posterAspect;
+  const posterAspectToUse = isRound ? '4:3' : posterAspect;
   const renderTile = useCallback(
     (item: PlaylistItem, isInView: boolean) => {
       const url = mediaURL({ media: item, playlistId: playlist.feedid, play: type === PersonalShelf.ContinueWatching });

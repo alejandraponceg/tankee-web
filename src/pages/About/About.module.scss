@@ -2,8 +2,14 @@
 @use 'src/styles/theme';
 
 div.about {
-  max-width: 960px;
-  margin: 24px auto;
+  max-width: 100%;
+  margin: 2rem;
   padding: 16px;
   font-size: 16px;
+  text-align: justify;
+  @media (min-width: 600px) {
+    margin-right: 5rem;
+    margin-left: 5rem;
+
+  }
 }

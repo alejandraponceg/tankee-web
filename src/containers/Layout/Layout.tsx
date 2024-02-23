@@ -123,7 +123,7 @@ const Layout = () => {
   };
 
   const contactUsClickHandler = () => {
-    navigate('/t/contact/');
+    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfRfZum1LbqrjEzIRZFcwu0BMl6v-GNlE3bZdHdO1_icBso_A/viewform?embedded=true';
   };
 
   const disclaimersClickHandler = () => {
@@ -177,14 +177,14 @@ const Layout = () => {
     <div className={styles.layout}>
       <Helmet>
         <title>{siteName}</title>
-        <meta name="description" content={metaDescription}/>
-        <meta property="og:description" content={metaDescription}/>
-        <meta property="og:title" content={siteName}/>
-        <meta name="twitter:title" content={siteName}/>
-        <meta name="twitter:description" content={metaDescription}/>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:title" content={siteName} />
+        <meta name="twitter:title" content={siteName} />
+        <meta name="twitter:description" content={metaDescription} />
         <meta
-            httpEquiv="Content-Security-Policy"
-            content={`
+          httpEquiv="Content-Security-Policy"
+          content={`
                       default-src 'self';
                       img-src https://img.jwplayer.com https://cdn.jwplayer.com https://assets-jpcust.jwpsrv.com https://development.tankee.com https://tankee.com;
                       frame-src https://docs.google.com;
@@ -196,13 +196,13 @@ const Layout = () => {
       </Helmet>
       <div className={styles.main}>
         <Header
-            onMenuButtonClick={() => setSideBarOpen(true)}
-            downloadButtonClick={downloadButtonClickHandler}
-            logoSrc={banner}
-            searchEnabled={!!searchPlaylist}
-            searchBarProps={{
-              query: searchQuery,
-              onQueryChange: (event) => updateSearchQuery(event.target.value),
+          onMenuButtonClick={() => setSideBarOpen(true)}
+          downloadButtonClick={downloadButtonClickHandler}
+          logoSrc={banner}
+          searchEnabled={!!searchPlaylist}
+          searchBarProps={{
+            query: searchQuery,
+            onQueryChange: (event) => updateSearchQuery(event.target.value),
             onClearButtonClick: () => updateSearchQuery(''),
             inputRef: searchInputRef,
           }}

@@ -1,101 +1,165 @@
 @use 'src/styles/variables';
 @use 'src/styles/theme';
 
-.grid {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows:  auto auto auto auto auto;
-  grid-template-areas:
-    "logo aboutHeader legal links"
-    "getApp aboutUs disclaimers originals"
-    "kidSafe contact terms games"
-    ". . privacy creators"
-    "copy copy copy copy"
-
-}
-
 .image {
-  max-width:100%;
+  max-width:50%;
+  padding-bottom: 1rem;
+  @media (min-width: 600px) {
+    max-width:30%;
+  }
+  @media (min-width: 900px) {
+    max-width:50%;
+  }
 }
-
 .header {
   font-weight: bold;
 }
 
 .link {
   font-weight: normal;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .copy {
+  padding-bottom: 1rem;
   font-weight: normal;
+  text-align: center;
+  @media (min-width: 600px)  {
+    padding-top: 3rem;
+  }
+  @media (min-width: 900px) {
+    padding-bottom: 1rem;
+  }
 }
 
 .logo {
   @extend .image;
-  grid-area: logo;
+  max-width: 60%;
+  @media (min-width: 600px) {
+    max-width:40%;
+  }
+  @media (min-width: 900px) {
+    max-width:60%;
+  }
 }
 
 .getApp {
   @extend .image;
-  grid-area: getApp;
 }
 
 .kidSafe {
   @extend .image;
-  grid-area: kidSafe;
 }
 
 .aboutHeader {
   @extend .header;
-  grid-area: aboutHeader;
+
+  @media (min-width: 600px) {
+    padding-bottom: 1rem;
+  }
+  @media (min-width: 900px) {
+    padding-bottom: 1rem;
+  }
+
 }
 
 .aboutUs {
   @extend .link;
-  grid-area: aboutUs;
 }
 
 .contact {
   @extend .link;
-  grid-area: contact;
 }
 
 .legal {
   @extend .header;
-  grid-area: legal;
+
+  @media (min-width: 600px) {
+    padding-bottom: 1rem;
+  }
+  @media (min-width: 900px) {
+    padding-bottom: 1rem;
+  }
 }
 
 .disclaimers {
   @extend .link;
-  grid-area: disclaimers;
 }
 
 .terms {
   @extend .link;
-  grid-area: terms;
 }
 
 .privacy {
   @extend .link;
-  grid-area: privacy;
 }
 
 .links {
   @extend .header;
-  grid-area: links;
+
+  @media (min-width: 600px) {
+    padding-bottom: 1rem;
+  }
+  @media (min-width: 900px) {
+    padding-bottom: 1rem;
+  }
 }
 
 .originals {
   @extend .link;
-  grid-area: originals;
 }
 
 .games {
   @extend .link;
-  grid-area: games;
 }
 
 .creators {
   @extend .link;
-  grid-area: creators;
 }
+
+.mainFooter{
+  max-width: 100%;
+  height: 6rem;
+  padding: 1rem;
+}
+
+.cards {
+  display: grid;
+  margin: 5%;
+
+  gap: 1rem;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  height: 6rem;
+  padding: 1rem;
+  text-align: center;
+  @media (min-width: 600px) {
+    text-align: left;
+  }
+  @media (min-width: 900px) {
+    text-align: left;
+  }
+}
+
+.cardImages{
+  @extend .card;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+}
+
+.cardAbout{
+  @extend .card;
+  margin-bottom: -1rem;
+  padding-bottom: -1rem;
+}
+

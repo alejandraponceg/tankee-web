@@ -23,7 +23,6 @@ import TOS from '#src/pages/TOS/TOS';
 import Disclaimers from '#src/pages/Disclaimers/Disclaimers';
 import Privacy from '#src/pages/Privacy/Privacy';
 import Download from '#src/pages/Download/Download';
-import Contact from '#src/pages/Contact/Contact';
 
 export default function AppRoutes() {
   const location = useLocation();
@@ -65,7 +64,6 @@ export default function AppRoutes() {
         <Route path="/s/:id/*" element={<LegacySeries />} />
         <Route path="/q/*" element={<Search />} />
         <Route path="/t/about" element={<About />} />
-        <Route path="/t/contact" element={<Contact />} />
         <Route path="/t/terms" element={<TOS />} />
         <Route path="/t/disclaimers" element={<Disclaimers />} />
         <Route path="/t/privacy" element={<Privacy />} />

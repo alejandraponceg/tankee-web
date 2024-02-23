@@ -9,7 +9,7 @@ const Privacy = () => {
   
 * Purpose and Extent of this Policy
 * Information We Collect
-* How We Use Information We Collect
+* How We Use Information We Collectbackground-color: rgba(variables.$white, 0.1);
 * When We Disclose Collected Information
 * Parental Access and Controls
 * Protection of Information and Data Security
