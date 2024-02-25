@@ -56,7 +56,8 @@ function CardGrid({
   onCardHover,
 }: CardGridProps) {
   const breakpoint: Breakpoint = useBreakpoint();
-  const posterAspect = parseAspectRatio(playlist.cardImageAspectRatio || playlist.shelfImageAspectRatio);
+  const isRound = isRoundIcon(playlist);
+  const posterAspect = isRound ? '4:3' : parseAspectRatio(playlist.cardImageAspectRatio || playlist.shelfImageAspectRatio);
   const visibleTiles = cols[breakpoint] + parseTilesDelta(posterAspect);
   const [rowCount, setRowCount] = useState(INITIAL_ROW_COUNT);
 
@@ -84,7 +85,7 @@ function CardGrid({
             isLocked={isLocked(accessModel, isLoggedIn, hasSubscription, playlistItem)}
             posterAspect={posterAspect}
             item={playlistItem}
-            isRound={isRoundIcon(playlist)}
+            isRound={isRound}
           />
         </div>
       </div>
