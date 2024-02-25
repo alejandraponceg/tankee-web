@@ -46,7 +46,6 @@ const LegacySeries = () => {
   const { isLoading: isSeriesPlaylistLoading, data: seriesPlaylist, isError: isPlaylistError } = usePlaylist(seriesId, {}, true, false);
   const { isLoading: isEpisodeLoading, data: episode } = useMedia(episodeId || '');
   const { isLoading: isTrailerLoading, data: trailerItem } = useMedia(episode?.trailerId || '');
-
   const episodeMetadata = useMemo(() => ({ episodeNumber: episode?.episodeNumber || '0', seasonNumber: episode?.seasonNumber || '0' }), [episode]);
 
   // Whether we show series or episode information. For old series flow we only have access to the playlist
@@ -110,7 +109,7 @@ const LegacySeries = () => {
   const pageTitle = `${selectedItem.title} - ${siteName}`;
   const pageDescription = selectedItem?.description || '';
   const canonicalUrl = `${window.location.origin}${legacySeriesURL({ episodeId: episode?.mediaid, seriesId })}`;
-  const backgroundImage = (selectedItem.backgroundImage as string) || undefined;
+  const backgroundImage = (selectedItem.playlist as PlaylistItem[]).at(0)?.backgroundImage;
 
   const primaryMetadata = episode
     ? formatVideoMetaString(episode, t('video:total_episodes', { count: seriesPlaylist?.playlist?.length }))
