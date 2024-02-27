@@ -130,13 +130,8 @@ export const formatPrice = (price: number, currency: string, country?: string) =
 
 export const formatVideoMetaString = (item: PlaylistItem, episodesLabel?: string) => {
   const metaData = [];
-
   if (item.pubdate) metaData.push(new Date(item.pubdate * 1000).getFullYear());
   if (!episodesLabel && item.duration) metaData.push(formatDuration(item.duration));
-  if (episodesLabel) metaData.push(episodesLabel);
-  if (item.genre) metaData.push(item.genre);
-  if (item.rating) metaData.push(item.rating);
-
   return metaData.join(' • ');
 };
 

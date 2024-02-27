@@ -109,7 +109,7 @@ const LegacySeries = () => {
   const pageTitle = `${selectedItem.title} - ${siteName}`;
   const pageDescription = selectedItem?.description || '';
   const canonicalUrl = `${window.location.origin}${legacySeriesURL({ episodeId: episode?.mediaid, seriesId })}`;
-  const backgroundImage = selectedItem.backgroundImage as string || (selectedItem.playlist as PlaylistItem[]).at(0)?.backgroundImage;
+  const backgroundImage = (selectedItem.backgroundImage as string) || (selectedItem.playlist as PlaylistItem[]).at(0)?.backgroundImage;
 
   const primaryMetadata = episode
     ? formatVideoMetaString(episode, t('video:total_episodes', { count: seriesPlaylist?.playlist?.length }))

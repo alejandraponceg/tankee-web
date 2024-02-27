@@ -193,7 +193,6 @@ const VideoLayout: React.FC<Props> = ({
       trailerButton={trailerButton}
       shareButton={shareButton}
       primaryMetadata={primaryMetadata}
-      secondaryMetadata={secondaryMetadata}
     >
       {playlist && <div className={styles.relatedVideos}>{renderRelatedVideos(true)}</div>}
       {children}
