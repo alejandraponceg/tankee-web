@@ -193,6 +193,7 @@ const Layout = () => {
                       script-src-elem https://www.googletagmanager.com https://cdn.jwplayer.com http://ssl.p.jwpcdn.com http://www.gstatic.com;
                       media-src 'self' data: blob: *;
                       style-src 'unsafe-inline';
+                      style-src-elem https://development.tankee.com https://tankee.com;
                 `}
         />
       </Helmet>
