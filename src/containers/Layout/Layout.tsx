@@ -186,11 +186,13 @@ const Layout = () => {
           httpEquiv="Content-Security-Policy"
           content={`
                       default-src 'self';
-                      img-src https://img.jwplayer.com https://cdn.jwplayer.com https://assets-jpcust.jwpsrv.com https://development.tankee.com https://tankee.com;
+                      img-src https://img.jwplayer.com https://cdn.jwplayer.com https://assets-jpcust.jwpsrv.com http://prd.jwpltx.com http://ping-meta-prd.jwpltx.com https://development.tankee.com https://tankee.com 'self';
                       frame-src https://docs.google.com;
-                      worker-src https://www.google.com/recaptcha/api2/webworker.js;
-                      connect-src https://analytics.google.com https://stats.g.doubleclick.net https://cdn.jwplayer.com;
-                      script-src-elem https://www.googletagmanager.com https://cdn.jwplayer.com;
+                      worker-src https://www.google.com/recaptcha/api2/webworker.js 'self' data: blob: *;
+                      connect-src https://analytics.google.com https://stats.g.doubleclick.net https://cdn.jwplayer.com https://ihe.jwpltx.com https://assets-jpcust.jwpsrv.com  https://videos-cloudfront-usp.jwpsrv.com;
+                      script-src-elem https://www.googletagmanager.com https://cdn.jwplayer.com http://ssl.p.jwpcdn.com http://www.gstatic.com;
+                      media-src 'self' data: blob: *;
+                      style-src 'unsafe-inline';
                 `}
         />
       </Helmet>
