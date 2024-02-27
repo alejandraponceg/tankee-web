@@ -29,6 +29,11 @@ jobs:
           echo "defaultConfigSource = tftocmi1" >> ./ini/.webapp.prod.ini
       - name: Build production website
         run: yarn build
+      - name: Add robots.txt
+        run: |
+          touch ./build/public/robots.txt
+          echo "User-agent: *" >> ./build/public/robots.txt
+          echo "Allow: /" >> ./build/public/robots.txt
       - name: Copy to S3 bucket
         uses: jakejarvis/s3-sync-action@master
         with:
