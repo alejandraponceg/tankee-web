@@ -190,7 +190,7 @@ const Layout = () => {
                       frame-src https://docs.google.com;
                       worker-src https://www.google.com/recaptcha/api2/webworker.js;
                       connect-src https://analytics.google.com https://stats.g.doubleclick.net https://cdn.jwplayer.com;
-                      script-src-elem https://www.googletagmanager.com;
+                      script-src-elem https://www.googletagmanager.com https://cdn.jwplayer.com;
                 `}
         />
       </Helmet>
