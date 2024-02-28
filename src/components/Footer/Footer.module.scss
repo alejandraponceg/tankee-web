@@ -4,6 +4,9 @@
 .image {
   max-width:50%;
   padding-bottom: 1rem;
+  &:hover {
+    cursor: pointer;
+  }
   @media (min-width: 600px) {
     max-width:30%;
   }
@@ -19,6 +22,7 @@
   font-weight: normal;
   &:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
 }
 

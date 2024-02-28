@@ -26,6 +26,7 @@ import { IS_DEVELOPMENT_BUILD } from '#src/utils/common';
 import ProfileController from '#src/stores/ProfileController';
 import { getModule } from '#src/modules/container';
 import Footer from '#components/Footer/Footer';
+import { openInNewTab } from '#src/utils/tankee';
 
 const Layout = () => {
   const location = useLocation();
@@ -115,7 +116,7 @@ const Layout = () => {
   };
 
   const kidSafeClickHandler = () => {
-    window.location.href = 'https://www.kidsafeseal.com/certifiedproducts/tankee_app.html';
+    openInNewTab('https://www.kidsafeseal.com/certifiedproducts/tankee_app.html');
   };
 
   const aboutUsClickHandler = () => {
@@ -123,7 +124,7 @@ const Layout = () => {
   };
 
   const contactUsClickHandler = () => {
-    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSfRfZum1LbqrjEzIRZFcwu0BMl6v-GNlE3bZdHdO1_icBso_A/viewform?embedded=true';
+    openInNewTab('https://airtable.com/appEEbOxeL7HcY4Ch/pag8xflTzQftr1tAU/form');
   };
 
   const disclaimersClickHandler = () => {
@@ -189,7 +190,7 @@ const Layout = () => {
                       img-src https://img.jwplayer.com https://cdn.jwplayer.com https://assets-jpcust.jwpsrv.com http://prd.jwpltx.com http://ping-meta-prd.jwpltx.com https://development.tankee.com https://tankee.com 'self';
                       frame-src https://docs.google.com;
                       worker-src https://www.google.com/recaptcha/api2/webworker.js 'self' data: blob: *;
-                      connect-src https://analytics.google.com https://stats.g.doubleclick.net https://cdn.jwplayer.com https://ihe.jwpltx.com https://assets-jpcust.jwpsrv.com  https://videos-cloudfront-usp.jwpsrv.com;
+                      connect-src https://analytics.google.com https://www.google-analytics.com https://stats.g.doubleclick.net https://cdn.jwplayer.com https://ihe.jwpltx.com https://assets-jpcust.jwpsrv.com  https://videos-cloudfront-usp.jwpsrv.com;
                       script-src-elem https://www.googletagmanager.com https://cdn.jwplayer.com http://ssl.p.jwpcdn.com http://www.gstatic.com;
                       media-src 'self' data: blob: *;
                       style-src 'unsafe-inline';
