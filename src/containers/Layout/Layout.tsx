@@ -36,8 +36,7 @@ const Layout = () => {
   const { config, accessModel, clientId } = useConfigStore(({ config, accessModel, clientId }) => ({ config, accessModel, clientId }), shallow);
   const isLoggedIn = !!useAccountStore(({ user }) => user);
   const favoritesEnabled = !!config.features?.favoritesList;
-  const { menu, assets, siteName, description, styling, features } = config;
-  const metaDescription = description || t('default_description');
+  const { menu, assets, styling, features } = config;
 
   const profileController = getModule(ProfileController, false);
 
@@ -177,12 +176,6 @@ const Layout = () => {
   return (
     <div className={styles.layout}>
       <Helmet>
-        <title>{siteName}</title>
-        <meta name="description" content={metaDescription} />
-        <meta property="og:description" content={metaDescription} />
-        <meta property="og:title" content={siteName} />
-        <meta name="twitter:title" content={siteName} />
-        <meta name="twitter:description" content={metaDescription} />
         <meta
           httpEquiv="Content-Security-Policy"
           content={`
