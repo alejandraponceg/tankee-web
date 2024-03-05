@@ -1,7 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import 'wicg-inert';
-import { registerSW } from 'virtual:pwa-register';
 
 import '#src/modules/register';
 
@@ -16,5 +15,3 @@ if (rootElement) {
 } else {
   console.info('Application - rootElement not found');
 }
-
-registerSW();

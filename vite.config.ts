@@ -5,7 +5,6 @@ import type { ConfigEnv, UserConfigExport } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import eslintPlugin from 'vite-plugin-eslint';
 import StylelintPlugin from 'vite-plugin-stylelint';
-import { VitePWA } from 'vite-plugin-pwa';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import { Target, viteStaticCopy } from 'vite-plugin-static-copy';
 
@@ -56,7 +55,6 @@ export default ({ mode, command }: ConfigEnv): UserConfigExport => {
       }),
       eslintPlugin({ emitError: mode === 'production' || mode === 'demo' || mode === 'preview' }), // Move linting to pre-build to match dashboard
       StylelintPlugin(),
-      VitePWA(),
       createHtmlPlugin({
         minify: true,
         inject: process.env.APP_GOOGLE_SITE_VERIFICATION_ID
