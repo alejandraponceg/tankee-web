@@ -193,6 +193,7 @@ const Layout = () => {
                       connect-src https://analytics.google.com https://www.google-analytics.com https://stats.g.doubleclick.net https://cdn.jwplayer.com https://ihe.jwpltx.com https://assets-jpcust.jwpsrv.com  https://videos-cloudfront-usp.jwpsrv.com;
                       script-src-elem https://www.googletagmanager.com https://cdn.jwplayer.com http://ssl.p.jwpcdn.com http://www.gstatic.com;
                       media-src 'self' data: blob: *;
+                      manifest-src https://tankee.com;
                       style-src 'unsafe-inline';
                       style-src-elem https://tankee.com 'unsafe-inline';
                 `}
