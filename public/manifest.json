@@ -1,18 +1,34 @@
 {
-  "name": "JW OTT Webapp",
+  "name": "Tankee - First Kids Gaming Network",
   "display": "standalone",
   "start_url": "/",
-  "short_name": "JW OTT",
+  "short_name": "Tankee",
   "theme_color": "#DD0000",
-  "description": "JW OTT Webapp is an open-source, dynamically generated video website.",
+  "description": "Tankee, Inc. is an Austin-based media company dedicated to the future of kids’ digital entertainment. Tankee, the company’s first offering, is a free entertainment app for kids 6-12 that helps parents protect their kids from inappropriate online content while giving kids access to the gaming videos they love.",
   "orientation": "any",
   "background_color": "#000",
   "related_applications": [],
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "images/android-chrome-144x144.png",
-      "sizes": "144x144"
+      "src": "images/favicon-16x16.png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "images/favicon-32x32.png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "images/apple-touch-icon.png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "images/android-chrome-192x192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/android-chrome-512x512.png",
+      "sizes": "512x512"
     }
   ]
 }
