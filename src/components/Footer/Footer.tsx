@@ -81,7 +81,7 @@ const Footer: React.FC<Props> = ({
           </h6>
         </div>
       </div>
-      <h6 className={styles.copy}>&copy;2023 Copyright | All rights reserved</h6>
+      <h6 className={styles.copy}>&copy;2024 Copyright | All rights reserved</h6>
     </footer>
   );
 };
