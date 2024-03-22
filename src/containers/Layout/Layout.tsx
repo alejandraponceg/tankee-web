@@ -107,7 +107,7 @@ const Layout = () => {
   };
 
   const downloadButtonClickHandler = () => {
-    navigate('/t/download/');
+    navigate('/download/');
   };
 
   const homeClickHandler = () => {
@@ -119,7 +119,7 @@ const Layout = () => {
   };
 
   const aboutUsClickHandler = () => {
-    navigate('/t/about/');
+    navigate('/about/');
   };
 
   const contactUsClickHandler = () => {
@@ -127,15 +127,15 @@ const Layout = () => {
   };
 
   const disclaimersClickHandler = () => {
-    navigate('/t/disclaimers/');
+    navigate('/disclaimers/');
   };
 
   const termsClickHandler = () => {
-    navigate('/t/terms/');
+    navigate('/terms/');
   };
 
   const privacyClickHandler = () => {
-    navigate('/t/privacy/');
+    navigate('/privacy/');
   };
 
   const originalsClickHandler = () => {
