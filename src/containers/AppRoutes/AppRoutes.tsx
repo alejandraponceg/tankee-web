@@ -66,7 +66,7 @@ export default function AppRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/terms" element={<TOS />} />
         <Route path="/disclaimers" element={<Disclaimers />} />
-        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/policy" element={<Privacy />} />
         <Route path="/download" element={<Download />} />
         <Route
           path="/*"
