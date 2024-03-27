@@ -135,7 +135,7 @@ const Layout = () => {
   };
 
   const privacyClickHandler = () => {
-    navigate('/privacy/');
+    navigate('/policy/');
   };
 
   const originalsClickHandler = () => {
