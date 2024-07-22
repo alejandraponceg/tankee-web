@@ -4,7 +4,6 @@ import styles from './Footer.module.scss';
 
 import logo from '#src/assets/footer/logo.svg';
 import getApp from '#src/assets/footer/getApp.svg';
-import kidSafe from '#src/assets/footer/kidSafe.png';
 
 type Props = {
   onLogoClick?: () => void;
@@ -23,7 +22,6 @@ type Props = {
 const Footer: React.FC<Props> = ({
   onLogoClick,
   onGetAppClick,
-  onKidsSafeClick,
   onAboutUsClick,
   onContactClick,
   onDisclaimersClick,
@@ -44,7 +42,11 @@ const Footer: React.FC<Props> = ({
             <img src={getApp} alt={getApp} className={styles.getApp} onClick={onGetAppClick} />
           </div>
           <div>
-            <img src={kidSafe} alt={kidSafe} className={styles.kidSafe} onClick={onKidsSafeClick} />
+            <a href="https://www.kidsafeseal.com/certifiedproducts/tankee_app.html" target="_blank">
+              <img className={styles.kidSafe}
+                   alt="Tankee is a member of the kidSAFE Seal Program."
+                   src="https://www.kidsafeseal.com/sealimage/18168162001909727230/tankee_app_svg_whitetm.svg"/>
+            </a>
           </div>
         </div>
         <div className={styles.cardAbout}>

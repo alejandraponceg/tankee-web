@@ -114,10 +114,6 @@ const Layout = () => {
     navigate('/');
   };
 
-  const kidSafeClickHandler = () => {
-    openInNewTab('https://www.kidsafeseal.com/certifiedproducts/tankee_app.html');
-  };
-
   const aboutUsClickHandler = () => {
     navigate('/about/');
   };
@@ -247,7 +243,6 @@ const Layout = () => {
         <Footer
           onLogoClick={homeClickHandler}
           onGetAppClick={downloadButtonClickHandler}
-          onKidsSafeClick={kidSafeClickHandler}
           onAboutUsClick={aboutUsClickHandler}
           onContactClick={contactUsClickHandler}
           onDisclaimersClick={disclaimersClickHandler}
