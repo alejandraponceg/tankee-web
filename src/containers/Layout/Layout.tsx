@@ -176,8 +176,8 @@ const Layout = () => {
           httpEquiv="Content-Security-Policy"
           content={`
                       default-src 'self';
-                      img-src https://img.jwplayer.com https://cdn.jwplayer.com https://assets-jpcust.jwpsrv.com http://prd.jwpltx.com http://ping-meta-prd.jwpltx.com https://tankee.com 'self';
-                      frame-src https://docs.google.com;
+                      img-src https://img.jwplayer.com https://cdn.jwplayer.com https://assets-jpcust.jwpsrv.com http://prd.jwpltx.com http://ping-meta-prd.jwpltx.com https://tankee.com  https://www.google.com.ec 'self';
+                      frame-src https://docs.google.com https://td.doubleclick.net;
                       worker-src https://www.google.com/recaptcha/api2/webworker.js 'self' data: blob: *;
                       connect-src https://ads.superawesome.tv https://sonic.tankee.com https://analytics.google.com https://www.google-analytics.com https://stats.g.doubleclick.net https://cdn.jwplayer.com https://ihe.jwpltx.com https://assets-jpcust.jwpsrv.com  https://videos-cloudfront-usp.jwpsrv.com;
                       script-src-elem https://www.googletagmanager.com https://cdn.jwplayer.com http://ssl.p.jwpcdn.com http://www.gstatic.com;
