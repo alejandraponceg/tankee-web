@@ -27,7 +27,7 @@ jobs:
         run: |
           touch ./ini/.webapp.prod.ini
           echo "defaultConfigSource = tftocmi1" >> ./ini/.webapp.prod.ini
-          echo "playerLicenseKey =  tPfjf2Qo" >> ./ini/.webapp.prod.ini
+          echo "playerId =  tPfjf2Qo" >> ./ini/.webapp.prod.ini
       - name: Build production website
         run: yarn build
       - name: Copy to S3 bucket
